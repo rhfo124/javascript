@@ -1,0 +1,38 @@
+//함수 표현식
+매주 수요일에 물을 주어야 하는 식물이 있다고 가정해 보겠습니다. 요일을 확인하는 데 도움이 되는 함수 표현식을 정의할 수 있으며 식물에 물을 주어야 합니다.
+const plantNeedsWater = function(day) {
+  if(day === 'Wednesday') {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+plantNeedsWater('Tuesday');
+console.log(plantNeedsWater());
+
+//화살표 함수
+const plantNeedsWater = function(day) {
+  if (day === 'Wednesday') {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+# =>를 사용하여 function을 생략 가능
+const plantNeedsWater = (day) => {
+  if (day === 'Wednesday') {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+//간결한 바디 화살표 함수
+const plantNeedsWater = (day) => {
+  return day === 'Wednesday' ? true : false;
+};
+
+# 함수 본문이 한줄일 때 중괄호{} 생략
+const plantNeedsWater = day => day === 'Wednesday' ? true : false;
