@@ -1,0 +1,41 @@
+요소 엑세스
+
+# 배열은 index가 0이므로 첫번째 항목은 index 0에 위치해 있다.
+const famousSayings = ['Fortune favors the brave.', 'A joke is a very serious thing.', 'Where there is love there is life.'];
+const listItem = 'Fortune favors the brave.';
+console.log(listItem);
+console.log(famousSayings[2]);
+console.log(famousSayings[3]);
+
+# 대괄호 표기법과 인덱스를 사용하여 문자열의 개별 문자에 액세스할 수도 있습니다.
+const hello = 'Hello World';
+console.log(hello[6]); // output : W
+
+요소 업데이트
+
+let groceryList = ['bread', 'tomatoes', 'milk'];
+groceryList[1] = 'avocados';
+console.log(groceryList);
+//output : ['bread', 'avocados', 'milk']
+
+
+let과 const가 있는 배열
+
+let condiments = ['Ketchup', 'Mustard', 'Soy Sauce', 'Sriracha'];
+const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+condiments[0] = 'Mayo';
+console.log(condiments);
+condiments = ['Mayo'];
+console.log(condiments);
+utensils[3] = 'Spoon';
+console.log(utensils);
+/* output
+[ 'Mayo', 'Mustard', 'Soy Sauce', 'Sriracha' ]
+[ 'Mayo' ]
+[ 'Fork', 'Knife', 'Chopsticks', 'Spoon' ] */
+
+.length 속성
+
+# 배열에 몇 개의 요소가 있는지 알고 싶을 때 .length속성에 액세스할 수 있습니다.
+const objectives = ['Learn a new languages', 'Read 52 books', 'Run a marathon'];
+console.log(objectives.length); // output : 3
