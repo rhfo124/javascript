@@ -1,0 +1,58 @@
+#  .push()메서드
+
+const chores = ['wash dishes', 'do laundry', 'take out trash'];
+chores.push('clean my room', 'dry clothes');
+console.log(chores);
+
+#  .pop() 메서드
+또 다른 배열 방법인 .pop()은 배열의 마지막 항목을 제거합니다.
+const chores = ['wash dishes', 'do laundry', 'take out trash', 'cook dinner', 'mop floor'];
+chores.pop();
+console.log(chores);
+
+#더 많은 배열 방법
+
+.pop().push()호출되는 배열을 변경합니다 . 그러나 원래 배열을 변경하고 싶지 않고 변경하지 않는 배열 방법을 사용할 수 있는 경우가 있습니다.
+JavaScript 개발자가 사용할 수 있는 일부 배열 메서드에는 .join(), .slice(), .splice(), .shift(), .unshift()등 .concat()이 있습니다. 이러한 기본 제공 방법을 사용하면 배열로 작업할 때 몇 가지 일반적인 작업을 더 쉽게 수행할 수 있습니다.
+
+
+.shift() - 첫번째 항목 제거
+.unshift() -  첫번째 항목에 추가
+.slice(fistr, last+1) - first부터 ~까지의 인덱스 출력
+.indexOf() = 특정 요소의 인덱스를 찾는다
+
+const groceryList = ['orange juice', 'bananas', 'coffee beans', 'brown rice', 'pasta', 'coconut oil', 'plantains'];
+groceryList.shift();
+console.log(groceryList);
+groceryList.unshift('popcorn');
+console.log(groceryList);
+console.log(groceryList.slice(1,4));
+console.log(groceryList);
+const pastaIndex = groceryList.indexOf('pasta');
+console.log(pastaIndex); 
+
+#배열과 함수
+
+const concept = ['arrays', 'can', 'be', 'mutated'];
+function changeArr(arr){
+  arr[3] = 'MUTATED';
+}
+
+changeArr(concept);
+console.log(concept); // output : [ 'arrays', 'can', 'be', 'MUTATED' ]
+function removeElement(newArr){
+  newArr.pop();
+}
+removeElement(concept);
+console.log(concept); // output : [ 'arrays', 'can', 'be' ]
+
+#중첩배열
+
+const nestedArr = [[1], [2, 3]];
+console.log(nestedArr[1]); // Output: [2, 3]
+console.log(nestedArr[1][0]); // Output: 2
+
+
+const numberClusters = [[1, 2], [3, 4], [5,6]];
+const target = numberClusters[2][1];
+console.log(target); // output : 6
