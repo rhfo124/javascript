@@ -1,97 +1,36 @@
-//SCOPE
-프로그래밍에서 중요한 개념은 범위(scope) 입니다. 
-범위는 변수에 액세스하거나 참조할 수 있는 위치를 정의합니다. 
-일부 변수는 프로그램 내 어디에서나 액세스할 수 있지만 
-다른 변수는 특정 컨텍스트에서만 사용할 수 있습니다.
+// app.js
+"Hello" + " my name is shanhun"
+const a = 5;
+const b = 2;
 
-//블록 및 범위
-블록은 중괄호 {} 세트 안에 있는 코드입니다.
-블록은 하나 이상의 명령문을 함께 그룹화하는 데 도움이 되며 
-코드의 중요한 구조적 표시자 역할을 합니다.
+const myName = "rhfo";
 
-//블록이 변수의 범위를 정의하는 방법 연습
-const city = 'New York City';
-const logCitySkyline = () => {
-  let skyscraper = 'Empire State Building';
-  return 'The stars over the ' + skyscraper + ' in ' + city;
-}
-console.log(logCitySkyline());
+console.log(a + b);
+console.log(a * b);
+console.log(a / b);
+console.log("Hello " + myName);
 
-//글로벌 scope
-const satellite = 'The Moon';
-const galaxy = 'The Milky Way';
-const stars = 'North Star';
-const callMyNightSky = () => {
-  return 'Night Sky: ' + satellite + ', ' + stars + ', and ' + galaxy;
-  console.log(callMyNightSky());
+// style.css
+body {
+    background-color: beige;
 }
 
-//블록범위
-const logVisibleLightWaves = () => {
-  const lightWaves = 'Moonlight';
-  console.log(lightWaves);
-}
-console.log(logVisibleLightWaves());
-console.log(lightWaves);
- 
-변수가 블록 내부에 정의되면 중괄호{} 안의 코드에만 액세스할 수 있습니다 . 
-변수는 해당 블록 내의 코드 라인에만 액세스할 수 있기 때문에 블록 범위가 있다고 말합니다.
-블록 범위로 선언된 변수 는 동일한 블록의 일부인 코드에서만 사용할 수 있으므로 지역 변수 라고 합니다.
+// index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Momentum</title>
+</head>
+<body>
+    <script src="app.js"></script>
+</body>
+</html>
 
 
-//범위오염
-항상 변수에 액세스할 수 있도록 하는 것이 좋은 생각처럼 보일 수 있지만
-너무 많은 전역 변수를 사용하면 프로그램에서 문제가 발생할 수 있습니다.
 
-전역 변수를 선언하면 global name space로 이동합니다 .
-global name space를 사용하면 프로그램의 어디에서나 변수에 액세스할 수 있습니다.
-이 변수는 프로그램이 끝날 때까지 그대로 유지되기때문에 global name space가 정말 빨리 채워질 수 있습니다.
 
-const satellite = 'The Moon';
-const galaxy = 'The Milky Way';
-let stars = 'North Star';
-
-const callMyNightSky = () => {
-  stars = 'Sirius';
-	return 'Night Sky: ' + satellite + ', ' + stars + ', ' + galaxy;
-};
-console.log(stars);                  //prints "North Star"
-console.log(callMyNightSky());   //prints "Night Sky: The Moon, Sirius, The Milky Way"
-console.log(stars);                 //prints "Sirius"
-
-//좋은 범위 지정 연습
-변수가 블록 외부에 존재할 필요가 없다면 없어야 합니다!!
-#정상
-const logVisibleLightWaves = () => {
-  let lightWaves = 'Moonlight';
-	let region = 'The Arctic';
-  // Add if statement here:
-  if(region === 'The Arctic'){
-    let lightWaves = 'Northern Lights';
-    console.log(lightWaves);
-  }
-};
-logVisibleLightWaves();
-
-#오류
-const logVisibleLightWaves = () => {
-  let lightWaves = 'Moonlight';
-	let region = 'The Arctic';
-  // Add if statement here:
-  if(region === 'The Arctic'){
-    console.log(lightWaves);
-    let lightWaves = 'Northern Lights';
-  }
-};
-logVisibleLightWaves();    
-
-#개념
-scope 는 프로그램 전체에서 변수에 액세스할 수 있는 위치를 나타내며 선언된 위치와 방법에 따라 결정됩니다.
-blocks 은 중괄호{} 안에 있는 문입니다 .
-global scope 는 프로그램의 모든 부분에서 변수에 액세스할 수 있는 컨텍스트를 나타냅니다.
-global variables 는 전역 범위 내에 존재하는 변수입니다.
-block scope 는 변수가 정의된 블록 내에서만 액세스할 수 있는 컨텍스트를 나타냅니다.
-local variables 는 블록 범위 내에 존재하는 변수입니다.
-global namespace 는 전역 범위 정보를 포함하는 코드의 공간입니다.
-scope pollution 은 네임스페이스에 너무 많은 변수가 존재하거나 변수 이름이 재사용되는 경우입니다.
-
+//output : 7  10  2.5  Hello rhfo
