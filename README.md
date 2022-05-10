@@ -1,1 +1,1 @@
-codecademy를 통해 javascript의 개념을 학습
+javascript와 html, css를 학습
