@@ -1,0 +1,49 @@
+// 2022.05.12 object
+const playerName = "rhfo";
+const playerPoints = 121212;
+const playerHandsome = false;
+const playerFat = "little bit";
+
+// player.name, player.points, player.handsome, player.fat
+const player = {
+    name:"rhfo",
+    points: 10,
+    fat: true
+};
+console.log(player); // output : {name: 'rhfo', points: 10, fat: true}
+console.log(player.name);
+console.log(player["name"]);
+player.fat = false;
+player.lastName = "potato";
+console.log(player); // output : {name: 'rhfo', points: 10, fat: false, lastName: 'potato'}
+// const가 아닌 const 안의 값 추가, 수정 가능
+
+
+// function
+function sayHello(nameOfPerson, age) {
+    console.log("Hello my name is " + nameOfPerson, " and I'm " + age);
+}
+sayHello("a", 10);
+sayHello("b", 23);
+sayHello("c", 21);
+
+function plus(firstNumber, secondNumber) {
+    console.log(firstNumber + secondNumber);
+}
+function divide(a, b) {
+    console.log(a / b);
+}
+plus(8, 60);
+divide(98, 20); 
+// console.log(firstNumber) 실행 시 오류 => firstNumer은 plus() 함수 안에서만 존재
+
+const playeer = {
+    name: "rhfo1",
+    sayHello: function(otherPersonName) {
+        console.log("hello " + otherPersonName + " nice to meet you");
+    },
+};
+
+console.log(playeer.name);
+playeer.sayHello("lynn");
+playeer.sayHello("rhfo");
