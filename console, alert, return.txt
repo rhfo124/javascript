@@ -1,0 +1,38 @@
+// 2022.05.13 return
+const age = 96;
+function calculateKrAge(ageOfForeigner) {
+    return ageOfForeigner + 2;
+}
+
+const krAge = calculateKrAge(age);
+ 
+console.log(krAge); // output : 98
+
+const calculator = {
+    plus: function (a, b) {
+        return a + b;
+    },
+    minus: function (a, b) {
+        return a - b;
+    },
+    times: function (a, b) {
+        return a * b;
+    },
+    divide: function (a, b) {
+        return a / b;
+    },
+    power: function (a, b) {
+        return a ** b;
+    }
+};
+
+const plusResult = calculator.plus(2,3);
+const minusResult = calculator.minus(plusResult, 10);
+const timesResult = calculator.times(10, minusResult);
+const divideResult = calculator.divide(timesResult, plusResult);
+const powerResult = calculator.power(divideResult, minusResult);
+
+/* console.log 콘솔에 출력하기 위함
+   alert 브라우저에 출력하기 위함
+   a + b, a - b 같은 실제적인 계산은 그 값을 바로 얻을 수 없음 그래서 return 사용 
+   return하면 함수는 종료된다. */
