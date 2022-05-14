@@ -1,0 +1,25 @@
+// 2022.05.14 conditionals - prompt, parseInt, isNaN
+const a = prompt("How old are you?");
+console.log(typeof a); // age의 type 확인
+console.log(a, parseInt(a)) // string -> number 변환, ex) "123" -> 123, 이외에는 변환x(nan)
+
+// 음주 가능한 나이인지 확인하는 계산기
+const age = parseInt(prompt("How old are you?"));
+console.log(isNaN(age)) // boolean으로 return(NaN인지 아닌지 판단)
+
+// if, else, &&, ||
+if(isNaN(age) || age < 0) {
+    console.log("Please write a real positive number.");
+} else if (age < 18) {
+    console.log("You are too young.");
+} else if (age >= 18 && age <= 50) {
+    console.log("You can drink.");
+} else if (age > 50 && age <= 80) {
+    console.log("You should exercise.")
+} else if ( age ===100) {
+    console.log("wow you are wise!");
+} else if (age > 80) {
+    console.log("You can do whatever you want.");
+} 
+
+// "==" 값만 비교, "===" 값과 type도 비교
