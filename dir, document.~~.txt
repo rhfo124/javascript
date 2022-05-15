@@ -1,0 +1,39 @@
+// 2022.05.15 the document objcet
+console.dir(document) // console.dir -> 객체의 속성 확인, console.log -> 객체의 요소 확인
+
+
+// HTML in JS
+js로 정보를 가지고 올 수 있는 방법으로 document 객체와 element를 가져오는 수많은 함수들 이용
+
+#index.html
+<h1 autofocus class="hello" id="title"> Grab me!</h1> 
+
+#app.js
+document.getElementById("title") => Grab me!
+
+const title = document.getElementById("title"); // HTML에서 id를 통해 element를 찾음
+console.dir(title);
+title.innerText = "Got you!"
+
+console.log(title.id);
+console.log(title.className);
+
+// Searching for elements
+
+#index.html
+<div class="hello">
+        <h1>Grab me!</h1>
+    </div>
+
+#app.js
+const title = document.getElementsByTagName("h1");
+console.log(title); //output: HTMLCollection [h1], 아직 title로 뭘 할 수 없음
+
+
+const title = document.querySelector(".hello h1"); //querySelector는 element를 css 방식으로 검색(hello라는 calss 내부에 있는 h1 가져옴)
+console.log(title); //output : <h1>Grab me!</h1> 
+
+// div class ~ 가 3개 있다면 3개 다 가져오는게 맞지만 querySelector는 첫 번째것만 가져옴. 다 가져오고 싶다면 querySelectorAll
+
+
+
