@@ -1,0 +1,54 @@
+// 2022.05.16 events #1
+
+const title = document.querySelector("div.hello:first-child h1"); //querySelector는 element를 css 방식으로 검색(hello라는 calss 내부에 있는 h1 가져옴)
+console.dir(title); //output : h1
+
+title.style.color = "blue";
+
+
+// event #2
+const h1 = document.querySelector("div.hello:first-child h1"); //querySelector는 element를 css 방식으로 검색(hello라는 calss 내부에 있는 h1 가져옴)
+
+function handleTitleClick() {
+    h1.style.color = "blue";
+}
+
+function handleMouseEnter() {
+    h1.innerText = "Mouse is here!";
+}
+
+function handleMouseLeave() {
+    h1.innerText = "Mouse is gone!";
+}
+
+function handleWindowResize() {
+    document.body.style.backgroundColor = "tomato";
+}
+
+function handleWindowCopy() {
+    alert("copier!");
+}
+
+function handleWindowOffline() {
+    alert("SOS no WIFI");
+}
+// wifi 연결 해제 시 momentum 앱 작동되는 이유는 file url로써 로컬 pc로 파일을 열기때문
+
+function handleWindowOnline() {
+    alert("ALL GOOOD!");
+}
+ 
+h1.addEventListener("click", handleTitleClick); //event를 listen하는 것
+//handleTitleClick()가 아님을 주의! (js에 function만 넘기고 유저가 click하면 js가 대신 클릭 실행)
+// h1.onclick = handleTitleClick; 으로 표현해도 되지만 removeEventListener을 통해 event listener을 제거할 수 있어서 저거 추천!
+h1.addEventListener("mouseenter", handleMouseEnter);
+h1.addEventListener("mouseleave", handleMouseLeave);
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
+
+// h1에서 발생하던 window에서 발생하던 element를 찾아 event listener를 추가하고 enent가 발생하면 반응
+
+
