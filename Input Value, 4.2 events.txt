@@ -1,0 +1,59 @@
+// 2022.05.18 Input values
+/* 
+const loginForm = document.getElementById("login-from");
+//querySelector() 사용할 때 대상이 id인지 명확히 해야함. getElementById()는 내가 id를 찾고 있는걸 앎
+
+const loginInput = loginForm.querySelector("input");
+const loginButton = loginForm.querySelector("button");
+//input와 button을 많이 사용할 것이라 loginForm 선언 
+아래 코드로 요약 가능 */
+
+const loginInput = document.querySelector("#login-from input");
+const loginButton = document.querySelector("#login-from button");
+
+function onLoginBtnClick() {
+    const username = loginUnput.value;
+    if (username ==="") {
+        alert("Please write your name");
+    } else if (username.length > 15) {
+        alert("Your name is too long.");
+    }
+}
+
+loginButton.addEventListener("click", onLoginBtnClick);
+
+
+# 4.2 events
+
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-from input");
+
+function onLoginSubmit(event) {
+    event.preventDefault(); //어떤 event의 기본 행동이든지 발생되지않도록 막는다.
+    console.log(loginInput);
+}
+
+loginForm.addEventListener("submit", onLoginSubmit);
+
+
+## index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=" UTF-8">
+    <meta http-equiv="X-UA-Compatiblew" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Momentum</title>
+</head>
+<body>
+    <form id="login-form">
+        <input 
+         required
+         maxlength="15"
+         type="text"
+         placeholder="What is your name?" />
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>
